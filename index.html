@@ -1,70 +1,85 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>भूतिया कहानियाँ | Yashpant21</title>
+import React, { useEffect } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Ghost, Skull, Moon } from "lucide-react";
+import { motion } from "framer-motion";
 
-  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+const stories = [
+  {
+    title: "Whispers in the Walls",
+    icon: <Ghost size={48} className="text-white mb-4" />,
+    content: "A family moves into a quiet home, only to hear whispers behind the walls at night. When they break the wall open, there's nothing inside—just a void that absorbs all sound."
+  },
+  {
+    title: "The Silent Village",
+    icon: <Skull size={48} className="text-white mb-4" />,
+    content: "An entire village disappears overnight. The only trace left behind is a single diary page that ends with the words, 'They walk among us now.'"
+  },
+  {
+    title: "Midnight Train",
+    icon: <Moon size={48} className="text-white mb-4" />,
+    content: "A train appears only at midnight. Those who board it never return. One survivor claims the train moves through time, feeding on passengers' fears."
+  },
+  {
+    title: "The Red Room",
+    icon: <Ghost size={48} className="text-white mb-4" />,
+    content: "A cursed livestream known as the Red Room shows the face of its next victim. If you see yourself, you have 24 hours to live."
+  },
+  {
+    title: "Voices from the Well",
+    icon: <Skull size={48} className="text-white mb-4" />,
+    content: "An old well in a schoolyard whispers secrets of the dead. A group of teens listens—and are never the same again."
+  }
+];
 
-  <!-- Background Music -->
-  <audio autoplay loop>
-    <source src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mpeg" />
-  </audio>
-</head>
-<body>
-  <header>
-    <h1>डरावनी कहानियाँ</h1>
-    <p>अगर हिम्मत है तो नीचे क्लिक कर के पढ़ो...</p>
-  </header>
+const HorrorWebsite = () => {
+  useEffect(() => {
+    const audio = new Audio("/horror-bg.mp3");
+    audio.loop = true;
+    audio.volume = 0.5;
+    audio.play();
 
-  <section class="about">
-    <img src="your-photo.jpg" alt="Yashpant21" class="profile-pic" />
-    <p>मैं हूँ Yashpant21 — डर मेरी दुनिया है। यहां मिलेंगी वो कहानियाँ जिन्हें सुनने के बाद आप लाइट बंद नहीं कर पाएंगे...</p>
-  </section>
+    return () => audio.pause();
+  }, []);
 
-  <section id="story-list">
-    <h2>👻 कहानियाँ</h2>
+  return (
+    <div className="min-h-screen bg-black text-white p-4">
+      <motion.h1
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="text-5xl font-bold text-center text-red-600 mb-10"
+      >
+        DarkRealm: A Horror Experience
+      </motion.h1>
 
-    <div class="story-block">
-      <div class="story-title" onclick="toggleStory(0)">1. आखिरी दरवाज़ा</div>
-      <div class="story-content">
-        गाँव के बाहर एक खंडहर था जहाँ कोई नहीं जाता था। लोग कहते थे वहाँ एक दरवाज़ा है — आखिरी दरवाज़ा...
-        <br><br>
-        विशाल ने शर्त में उसे खोल दिया। अंदर घुप्प अंधेरा था और आवाज़ें आ रही थीं — “आ जा विशाल...”
-        <br><br>
-        अगली सुबह दरवाज़ा फिर बंद मिला। उस पर एक नाम खुदा था — "विशाल"।
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {stories.map((story, index) => (
+          <motion.div
+            key={index}
+            whileHover={{ scale: 1.05 }}
+            className="bg-zinc-900 rounded-2xl shadow-lg p-6"
+          >
+            <Card>
+              <CardContent className="flex flex-col items-center text-center">
+                {story.icon}
+                <h2 className="text-xl font-bold text-red-500 mb-2">{story.title}</h2>
+                <p>{story.content}</p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="text-center mt-10">
+        <Button variant="destructive" size="lg">Enter the Realm</Button>
+      </div>
+
+      <div className="text-center mt-6 text-sm text-zinc-400">
+        Follow me on Instagram: <a href="https://instagram.com/yashpant21" target="_blank" rel="noopener noreferrer" className="text-red-500 underline">@yashpant21</a>
       </div>
     </div>
+  );
+};
 
-    <div class="story-block">
-      <div class="story-title" onclick="toggleStory(1)">2. खिलौना जो हँसता था</div>
-      <div class="story-content">
-        एक लड़की को जन्मदिन पर एक बोलने वाला खिलौना मिला। पर रात को 3 बजे वो खुद चालू हो गया और बोला — "मैं फिर आऊँगा..."
-        <br><br>
-        जब खिलौने की बैटरी निकाली गई, तो वो अंदर से पूरी खाली थी।
-      </div>
-    </div>
-
-    <!-- Add more stories as needed -->
-  </section>
-
-  <footer>
-    <a href="https://instagram.com/Yashpant21" target="_blank">
-      <img src="download.jpg" alt="Instagram" class="insta-logo" />
-      @Yashpant21
-    </a>
-    <p>© 2025 डर बनी रहेगी...</p>
-  </footer>
-
-  <script>
-    function toggleStory(index) {
-      const contents = document.querySelectorAll('.story-content');
-      contents.forEach((el, i) => {
-        el.style.display = i === index ? (el.style.display === 'block' ? 'none' : 'block') : 'none';
-      });
-    }
-  </script>
-</body>
-</html>
+export default HorrorWebsite;
