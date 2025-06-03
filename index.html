@@ -5,175 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>भूतिया कहानियाँ | Yashpant21</title>
 
-  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 
-  <!-- Music -->
+  <!-- Background Music -->
   <audio autoplay loop>
     <source src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mpeg" />
   </audio>
-
-  <!-- Styling -->
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Creepster', cursive;
-      background-color: #000;
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    header {
-      text-align: center;
-      padding: 2em 1em;
-      background-color: #000;
-      animation: flicker 2s infinite;
-    }
-
-    h1 {
-      font-size: 3.5em;
-      color: #ff1a1a;
-      text-shadow: 0 0 25px red;
-    }
-
-    p {
-      font-size: 1.2em;
-      color: #ccc;
-    }
-
-    #story-list {
-      max-width: 800px;
-      margin: 2em auto;
-      padding: 1em;
-      background: #111;
-      border-radius: 12px;
-      box-shadow: 0 0 20px crimson;
-    }
-
-    .story-title {
-      font-size: 1.6em;
-      margin: 1em 0;
-      cursor: pointer;
-      color: #ff4d4d;
-      transition: color 0.3s, text-shadow 0.3s;
-    }
-
-    .story-title:hover {
-      color: #fff;
-      text-shadow: 0 0 20px red;
-    }
-
-    .story-content {
-      display: none;
-      background: #1a0000;
-      padding: 1em;
-      margin-bottom: 1em;
-      border-left: 4px solid crimson;
-      border-radius: 8px;
-      animation: fadeIn 0.5s ease-in;
-      line-height: 1.6;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        opacity: 1;
-      }
-      20%, 24%, 55% {
-        opacity: 0.4;
-      }
-    }
-
-    footer {
-      text-align: center;
-      padding: 1em;
-      background-color: #000;
-      font-size: 1em;
-      color: #666;
-    }
-
-    footer a {
-      color: crimson;
-      text-decoration: none;
-    }
-
-    ::selection {
-      background: red;
-      color: black;
-    }
-  </style>
 </head>
 <body>
   <header>
-    <h1>भूतिया कहानियाँ</h1>
-    <p>अगर हिम्मत है तो क्लिक करो...</p>
+    <h1>डरावनी कहानियाँ</h1>
+    <p>अगर हिम्मत है तो नीचे क्लिक कर के पढ़ो...</p>
   </header>
 
+  <section class="about">
+    <img src="your-photo.jpg" alt="Yashpant21" class="profile-pic" />
+    <p>मैं हूँ Yashpant21 — डर मेरी दुनिया है। यहां मिलेंगी वो कहानियाँ जिन्हें सुनने के बाद आप लाइट बंद नहीं कर पाएंगे...</p>
+  </section>
+
   <section id="story-list">
+    <h2>👻 कहानियाँ</h2>
+
     <div class="story-block">
-      <div class="story-title" onclick="toggleStory(0)">1. सीढ़ियों की आवाज़</div>
-      <div class="story-content">रात को जब सब सो रहे थे, तब भी वो आवाज़ आती रही — <em>ठक... ठक... ठक...</em>। और अचानक किसी ने कंधे पर हाथ रख दिया...</div>
+      <div class="story-title" onclick="toggleStory(0)">1. आखिरी दरवाज़ा</div>
+      <div class="story-content">
+        गाँव के बाहर एक खंडहर था जहाँ कोई नहीं जाता था। लोग कहते थे वहाँ एक दरवाज़ा है — आखिरी दरवाज़ा...
+        <br><br>
+        विशाल ने शर्त में उसे खोल दिया। अंदर घुप्प अंधेरा था और आवाज़ें आ रही थीं — “आ जा विशाल...”
+        <br><br>
+        अगली सुबह दरवाज़ा फिर बंद मिला। उस पर एक नाम खुदा था — "विशाल"।
+      </div>
     </div>
 
     <div class="story-block">
-      <div class="story-title" onclick="toggleStory(1)">2. बंद दरवाज़ा</div>
-      <div class="story-content">उस पुराने घर का दरवाज़ा कभी खुलता नहीं था। लेकिन एक रात वो खुद खुल गया... और पीछे से दरवाज़ा बंद हो गया...</div>
+      <div class="story-title" onclick="toggleStory(1)">2. खिलौना जो हँसता था</div>
+      <div class="story-content">
+        एक लड़की को जन्मदिन पर एक बोलने वाला खिलौना मिला। पर रात को 3 बजे वो खुद चालू हो गया और बोला — "मैं फिर आऊँगा..."
+        <br><br>
+        जब खिलौने की बैटरी निकाली गई, तो वो अंदर से पूरी खाली थी।
+      </div>
     </div>
 
-    <div class="story-block">
-      <div class="story-title" onclick="toggleStory(2)">3. आईने के पीछे</div>
-      <div class="story-content">आईना रोज़ अजीब चीजें दिखा रहा था — एक परछाई जो पीछे खड़ी रहती थी, लेकिन पलटने पर कोई नहीं होता था...</div>
-    </div>
-
-    <div class="story-block">
-      <div class="story-title" onclick="toggleStory(3)">4. लाल साया</div>
-      <div class="story-content">हर रात तीन बजे वो लाल साया कमरे में घूमता था। और जब रौशनी जलाई जाती थी, कुछ भी नहीं मिलता...</div>
-    </div>
-
-    <div class="story-block">
-      <div class="story-title" onclick="toggleStory(4)">5. झूलते पाँव</div>
-      <div class="story-content">छत के पंखे से कुछ झूल रहा था... लेकिन नीचे देखने पर कुछ भी नहीं था। सिर्फ फर्श पर पानी की बूंदें...</div>
-    </div>
-
-    <div class="story-block">
-      <div class="story-title" onclick="toggleStory(5)">6. खिड़की पर चेहरा</div>
-      <div class="story-content">हर रात खिड़की पर एक चेहरा दिखाई देता था, लेकिन जब बाहर जाकर देखा... वहाँ सिर्फ दीवार थी।</div>
-    </div>
-
-    <div class="story-block">
-      <div class="story-title" onclick="toggleStory(6)">7. खिलौना जो हँसता था</div>
-      <div class="story-content">वो पुराना खिलौना रात में हँसता था। और उसकी आँखें चलती थीं... मगर उसमें बैटरी नहीं थी।</div>
-    </div>
-
-    <div class="story-block">
-      <div class="story-title" onclick="toggleStory(7)">8. श्मशान की आवाज़</div>
-      <div class="story-content">रात को श्मशान के पास से गुजरते हुए किसी ने नाम लेकर पुकारा... मुड़कर देखा तो कोई नहीं था।</div>
-    </div>
-
-    <div class="story-block">
-      <div class="story-title" onclick="toggleStory(8)">9. अजनबी की तस्वीर</div>
-      <div class="story-content">पुरानी तस्वीरों में एक चेहरा था जो किसी को याद नहीं था — लेकिन हर बार वो पास आता जा रहा था...</div>
-    </div>
-
-    <div class="story-block">
-      <div class="story-title" onclick="toggleStory(9)">10. सीटी की गूंज</div>
-      <div class="story-content">हर रात एक सीटी की आवाज़ आती थी... जो किसी की मौत की सूचना थी...</div>
-    </div>
+    <!-- Add more stories as needed -->
   </section>
 
   <footer>
-    <p>© 2025 Horror by <a href="https://instagram.com/Yashpant21" target="_blank">@Yashpant21</a></p>
+    <a href="https://instagram.com/Yashpant21" target="_blank">
+      <img src="download.jpg" alt="Instagram" class="insta-logo" />
+      @Yashpant21
+    </a>
+    <p>© 2025 डर बनी रहेगी...</p>
   </footer>
 
   <script>
     function toggleStory(index) {
-      const stories = document.querySelectorAll('.story-content');
-      stories.forEach((story, i) => {
-        story.style.display = i === index ? (story.style.display === 'block' ? 'none' : 'block') : 'none';
+      const contents = document.querySelectorAll('.story-content');
+      contents.forEach((el, i) => {
+        el.style.display = i === index ? (el.style.display === 'block' ? 'none' : 'block') : 'none';
       });
     }
   </script>
