@@ -1,57 +1,104 @@
 body {
-    margin: 0;
-    background: #0a0a0a;
-    color: #eee;
-    font-family: 'Creepster', cursive;
-    line-height: 1.6;
-    cursor: url('https://cur.cursors-4u.net/mechanics/mec-1/mec34.cur'), auto;
+  margin: 0;
+  font-family: 'Creepster', cursive;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
 }
 
 header {
-    text-align: center;
-    padding: 3em 1em;
-    background: black;
-    animation: flicker 3s infinite;
+  text-align: center;
+  padding: 2em 1em;
+  background-color: #000;
+  animation: flicker 2s infinite;
 }
 
-h1, h2, h3 {
-    color: #ff3333;
+h1 {
+  font-size: 3.5em;
+  color: #ff1a1a;
+  text-shadow: 0 0 25px red;
 }
 
-main {
-    max-width: 800px;
-    margin: auto;
-    padding: 2em;
+p {
+  font-size: 1.2em;
+  color: #ccc;
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
 }
 
-#horror-stories {
-    background: #1a0000;
-    padding: 2em;
-    border-radius: 10px;
-    box-shadow: 0 0 20px crimson;
+.about {
+  text-align: center;
+  padding: 2em;
 }
 
-.story {
-    margin-bottom: 2em;
-    padding: 1em;
-    background: #330000;
-    border-left: 5px solid #ff0000;
-    border-radius: 8px;
-    box-shadow: 0 0 15px red;
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid crimson;
+  box-shadow: 0 0 20px red;
+  margin-bottom: 1em;
+}
+
+#story-list {
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 1em;
+  background: #111;
+  border-radius: 12px;
+  box-shadow: 0 0 20px crimson;
+}
+
+.story-title {
+  font-size: 1.5em;
+  margin: 1em 0;
+  cursor: pointer;
+  color: #ff4d4d;
+  transition: 0.3s;
+}
+
+.story-title:hover {
+  color: #fff;
+  text-shadow: 0 0 10px red;
+}
+
+.story-content {
+  display: none;
+  background: #1a0000;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-left: 4px solid crimson;
+  border-radius: 8px;
+  animation: fadeIn 0.5s ease-in;
+  line-height: 1.6;
 }
 
 footer {
-    text-align: center;
-    padding: 1em;
-    background: #111;
-    color: #666;
+  text-align: center;
+  padding: 2em 1em;
+  background-color: #000;
+  color: #666;
+}
+
+footer img.insta-logo {
+  width: 30px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+footer a {
+  text-decoration: none;
+  color: crimson;
+  font-size: 1.2em;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes flicker {
-    0%, 18%, 22%, 25%, 53%, 57%, 100% {
-        opacity: 1;
-    }
-    20%, 24%, 55% {
-        opacity: 0.3;
-    }
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.4; }
 }
